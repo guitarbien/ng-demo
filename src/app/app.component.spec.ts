@@ -2,6 +2,7 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -22,5 +23,10 @@ describe('AppComponent', () => {
 
   it('should be created', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should appear app-title', () => {
+    const element = fixture.debugElement.query(By.css('app-title')).nativeElement;
+    expect(element).toBeTruthy();
   });
 });
