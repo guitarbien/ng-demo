@@ -1,14 +1,15 @@
-import { NgDemoPage } from './app.po';
 
-describe('ng-demo App', () => {
-  let page: NgDemoPage;
+import { DemoPage } from './app.po';
+
+describe('demo App', () => {
+  let page: DemoPage;
 
   beforeEach(() => {
-    page = new NgDemoPage();
+    page = new DemoPage();
   });
 
-  it('should display welcome message', () => {
+  it(`should display 'todos' in h1`, () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getTodos()).toBe('todos');
   });
 });
