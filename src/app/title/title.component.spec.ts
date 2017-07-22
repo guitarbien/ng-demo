@@ -28,4 +28,15 @@ describe('TitleComponent', () => {
   it(`should have as title 'todos'`, () => {
     expect(component.getTitle()).toBe('todos');
   });
+
+  it(`should use getTitle() in HTML`, () => {
+    spyOn(component, 'getTitle').and.returnValue('fake');
+
+    fixture.detectChanges();
+
+    const element = fixture.debugElement.query(By.css('h1')).nativeElement;
+
+    expect(element.textContent).toBe('fake');
+    expect(component.getTitle).toHaveBeenCalled();
+  });
 });
