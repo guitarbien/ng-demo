@@ -32,4 +32,14 @@ describe('AppComponent', () => {
       expect(htmlElement).toBeTruthy();
     });
   });
+
+  describe(`Property Binding`, () => {
+    it(`should use 'inputHint' field on 'placeholder' attribute in HTML`, () => {
+      component.inputHint = 'fake';
+      fixture.detectChanges();
+
+      htmlElement = debugElement.query(By.css('.new-todo')).nativeElement;
+      expect(htmlElement.getAttribute('placeholder')).toBe('fake');
+    });
+  });
 });
