@@ -41,5 +41,9 @@ describe('AppComponent', () => {
       htmlElement = debugElement.query(By.css('.new-todo')).nativeElement;
       expect(htmlElement.getAttribute('placeholder')).toBe('fake');
     });
+
+    it(`should have inputHint field as 'What needs to be done?' in class`, () => {
+      expect(target.inputHint).toBe('What needs to be done?');
+    });
   });
 });
