@@ -6,13 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./title.component.css']
 })
 export class TitleComponent implements OnInit {
-  getTitle = function() {
-    return 'todos';
+  title: string;
+
+  getTitle = () => {
+    return this.title;
   }
 
   constructor() { }
 
   ngOnInit() {
+    this.title = 'todos';
   }
 
 }
