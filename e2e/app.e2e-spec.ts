@@ -24,6 +24,6 @@ describe('demo App', () => {
       .setTodo('Study Angular')
       .setTodo(protractor.Key.ENTER);
 
-    expect(page.getTodo().toBe(''));
+    expect(page.getTodo()).toBe('');
   });
 });
