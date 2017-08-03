@@ -46,4 +46,13 @@ describe('AppComponent', () => {
       expect(target.inputHint).toBe('What needs to be done?');
     });
   });
+
+  describe(`Event Binding`, () => {
+    it(`整合測試 enter 按下時會呼叫 addTodo()`, () => {
+      spyOn(component, 'addTodo');
+      debugElement.query(By.css('.new-todo')).triggerEventHnadler('keyup.enter', null);
+
+      expect(component.addTodo).toHaveBeenCalled();
+    });
+  });
 });
