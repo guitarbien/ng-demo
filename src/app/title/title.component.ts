@@ -8,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TitleComponent implements OnInit {
   title: string;
 
-  getTitle = () => {
-    return this.title;
-  }
+  getTitle = () => this.title;
 
   constructor() { }
 
