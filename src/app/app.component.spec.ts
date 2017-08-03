@@ -54,5 +54,15 @@ describe('AppComponent', () => {
 
       expect(component.addTodo).toHaveBeenCalled();
     });
+
+    it(`單元測試 addTodo() 可以將 input 傳入陣列 todos 中，並清空 input`, () => {
+      const todoStub = <HTMLInputElement> {
+        'value': 'fake'
+      };
+      target.addTodo(todoStub);
+
+      expect(target.todos.length).toBe(1);
+      expect(todoStub.value).toBe('');
+    });
   });
 });
