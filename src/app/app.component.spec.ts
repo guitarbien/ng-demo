@@ -50,7 +50,7 @@ describe('AppComponent', () => {
   describe(`Event Binding`, () => {
     it(`整合測試 enter 按下時會呼叫 addTodo()`, () => {
       spyOn(component, 'addTodo');
-      debugElement.query(By.css('.new-todo')).triggerEventHnadler('keyup.enter', null);
+      debugElement.query(By.css('.new-todo')).triggerEventHandler('keyup.enter', null);
 
       expect(component.addTodo).toHaveBeenCalled();
     });
