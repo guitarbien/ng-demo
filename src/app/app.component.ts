@@ -10,7 +10,7 @@ export class AppComponent {
   todos: string[] = [];
 
   addTodo(todo: HTMLInputElement) {
-    this.todos.push(todo.value);
+    this.todos = [...this.todos, todo.value];
     todo.value = '';
   }
 }
