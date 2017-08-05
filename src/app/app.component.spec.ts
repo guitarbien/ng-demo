@@ -65,4 +65,12 @@ describe('AppComponent', () => {
       expect(todoStub.value).toBe('');
     });
   });
+
+  describe(`homework02`, () => {
+    it(`整合測試 select onChange 時會呼叫 changePlatform()`, () => {
+      spyOn(component, 'changePlatform');
+      debugElement.query(By.css('#platformSelector')).triggerEventHandler('change', null);
+
+      expect(component.changePlatform).toHaveBeenCalled();
+    });
 });
