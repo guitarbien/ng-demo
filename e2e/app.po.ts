@@ -22,4 +22,13 @@ export class DemoPage {
   getTodo(): any {
     return element(by.css('.new-todo')).getAttribute('value');
   }
+
+  selectChoose(input: string): any {
+    element(by.id('platformSelector')).element(by.css('option[value="' + input + '"]')).click();
+    return;
+  }
+
+  getChoosed(): any {
+    return element(by.css('.platformChoosed')).getText();
+  }
 }

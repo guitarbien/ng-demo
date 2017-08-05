@@ -26,4 +26,18 @@ describe('demo App', () => {
 
     expect(page.getTodo()).toBe('');
   });
+
+  it(`在 select 中選擇 AWS 畫面會呈現 '1', 選 Azure 畫面會呈現 '2', 選 Aliyun 畫面會呈現 '3'`, () => {
+    page.navigateTo()
+      .selectChoose('AWS');
+    expect(page.getChoosed()).toBe('1');
+
+    page.navigateTo()
+      .selectChoose('Azure');
+    expect(page.getChoosed()).toBe('2');
+
+    page.navigateTo()
+      .selectChoose('Aliyun');
+    expect(page.getChoosed()).toBe('3');
+  });
 });
