@@ -73,4 +73,14 @@ describe('AppComponent', () => {
 
       expect(component.changePlatform).toHaveBeenCalled();
     });
+
+    it(`單元測試 changePlatform() 會將當下所選的值放到 currentPlatform 中`, () => {
+      const platformStub = <HTMLInputElement> {
+        'value': 'AWS'
+      }
+      target.changePlatform(platformStub);
+
+      expect(target.currentPlatform).toBe('1');
+    });
+  });
 });
