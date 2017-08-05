@@ -57,7 +57,7 @@
   <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 </footer>
 
-<select id="platformSelector">
+<select id="platformSelector" (change)="changePlatform(platform)" #platform>
   <option></option>
   <option value="AWS">AWS</option>
   <option value="Azure">Azure</option>
