@@ -29,7 +29,7 @@ export class DemoPage {
   }
 
   getChoosed(): any {
-    return element(by.css('.platformChoosed')).getText();
+    return element(by.css('.platformChose')).getText();
   }
 
   selectCount(): any {

@@ -41,24 +41,24 @@ describe(`Homework2 驗收測試`, () => {
     expect(page.selectCount()).toBe(4);
   });
 
-  it(`在 select 中選擇 AWS 畫面會呈現 '1'`, () => {
+  it(`在 select 中選擇 AWS 畫面會呈現 '0'`, () => {
     page.navigateTo()
       .selectChoose('AWS');
+
+    expect(page.getChoosed()).toBe('0');
+  });
+
+  it(`在 select 中選 Azure 畫面會呈現 '1'`, () => {
+    page.navigateTo()
+      .selectChoose('Azure');
 
     expect(page.getChoosed()).toBe('1');
   });
 
-  it(`在 select 中選 Azure 畫面會呈現 '2'`, () => {
-    page.navigateTo()
-      .selectChoose('Azure');
-
-    expect(page.getChoosed()).toBe('2');
-  });
-
-  it(`在 select 中選 Aliyun 畫面會呈現 '3'`, () => {
+  it(`在 select 中選 Aliyun 畫面會呈現 '2'`, () => {
     page.navigateTo()
       .selectChoose('Aliyun');
 
-    expect(page.getChoosed()).toBe('3');
+    expect(page.getChoosed()).toBe('2');
   });
 });

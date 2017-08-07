@@ -92,7 +92,7 @@ describe('AppComponent', () => {
       }
       target.changePlatform(platformStub);
 
-      expect(target.currentPlatform).toBe('1');
+      expect(target.currentPlatform).toBe('0');
     });
   });
 });

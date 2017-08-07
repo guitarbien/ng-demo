@@ -17,9 +17,9 @@ export class AppComponent {
 
   changePlatform(platform: HTMLSelectElement) {
     const platformMapping = {
-      'AWS': '1',
-      'Azure': '2',
-      'Aliyun': '3'
+      'AWS': '0',
+      'Azure': '1',
+      'Aliyun': '2'
     }
 
     this.currentPlatform = platformMapping[platform.value];
