@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cloud } from './cloud';
 
 @Component({
   selector: 'app-root',
@@ -10,18 +11,19 @@ export class AppComponent {
   todos: string[] = [];
   currentPlatform: string;
 
+  // homework 02 所用的平台列表
+  clouds: Cloud[] = [
+    {id: 0, name: 'AWS'},
+    {id: 1, name: 'Azure'},
+    {id: 2, name: 'Aliyun'}
+  ];
+
   addTodo(todo: HTMLInputElement) {
     this.todos = [...this.todos, todo.value];
     todo.value = '';
   }
 
   changePlatform(platform: HTMLSelectElement) {
-    const platformMapping = {
-      'AWS': '0',
-      'Azure': '1',
-      'Aliyun': '2'
-    }
-
-    this.currentPlatform = platformMapping[platform.value];
+    this.currentPlatform = this.clouds.filter((cloud) => cloud.id.toString() === platform.value)[0].id.toString();
   }
 }
