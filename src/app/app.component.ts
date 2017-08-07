@@ -15,7 +15,7 @@ export class AppComponent {
     todo.value = '';
   }
 
-  changePlatform(platform: HTMLInputElement) {
+  changePlatform(platform: HTMLSelectElement) {
     const platformMapping = {
       'AWS': '1',
       'Azure': '2',

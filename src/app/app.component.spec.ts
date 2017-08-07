@@ -87,7 +87,7 @@ describe('AppComponent', () => {
 
   describe(`homework02 單元測試`, () => {
     it(`單元測試 changePlatform() 會將當下所選平台對應的值放到 currentPlatform 中`, () => {
-      const platformStub = <HTMLInputElement> {
+      const platformStub = <HTMLSelectElement> {
         'value': 'AWS'
       }
       target.changePlatform(platformStub);
