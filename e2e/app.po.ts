@@ -24,7 +24,7 @@ export class DemoPage {
   }
 
   selectChoose(input: string): any {
-    element(by.id('platformSelector')).element(by.css('option[value="' + input + '"]')).click();
+    element(by.id('platformSelector')).all(by.cssContainingText('option', input)).click();
     return;
   }
 
