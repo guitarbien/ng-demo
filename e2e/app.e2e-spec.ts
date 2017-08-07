@@ -35,6 +35,12 @@ describe(`Homework2 驗收測試`, () => {
     page = new DemoPage();
   });
 
+  it(`select 包含預設值應該要有四個 options`, () => {
+    page.navigateTo();
+
+    expect(page.selectCount()).toBe(4);
+  });
+
   it(`在 select 中選擇 AWS 畫面會呈現 '1'`, () => {
     page.navigateTo()
       .selectChoose('AWS');

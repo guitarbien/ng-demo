@@ -31,4 +31,8 @@ export class DemoPage {
   getChoosed(): any {
     return element(by.css('.platformChoosed')).getText();
   }
+
+  selectCount(): any {
+    return element(by.id('platformSelector')).all(by.tagName('option')).count();
+  }
 }
