@@ -66,14 +66,26 @@ describe('AppComponent', () => {
     });
   });
 
-  describe(`homework02`, () => {
-    it(`整合測試 select onChange 時會呼叫 changePlatform()`, () => {
+  describe(`homework02 整合測試`, () => {
+    it(`select onChange 時會呼叫 changePlatform()`, () => {
       spyOn(component, 'changePlatform');
       debugElement.query(By.css('#platformSelector')).triggerEventHandler('change', null);
 
       expect(component.changePlatform).toHaveBeenCalled();
     });
 
+    it(`畫面上要使用到變數 currentPlatform`, () => {
+      // 用 fake fake 方式來做驗證
+      component.currentPlatform = 'fake';
+      fixture.detectChanges();
+
+      htmlElement = debugElement.query(By.css('.platformChose')).nativeElement;
+
+      expect(htmlElement.textContent).toBe('fake');
+    });
+  });
+
+  describe(`homework02 單元測試`, () => {
     it(`單元測試 changePlatform() 會將當下所選平台對應的值放到 currentPlatform 中`, () => {
       const platformStub = <HTMLInputElement> {
         'value': 'AWS'
