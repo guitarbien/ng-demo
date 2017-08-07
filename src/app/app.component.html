@@ -59,9 +59,7 @@
 
 <select id="platformSelector" (change)="changePlatform(platform)" #platform>
   <option></option>
-  <option value="AWS">AWS</option>
-  <option value="Azure">Azure</option>
-  <option value="Aliyun">Aliyun</option>
+  <option *ngFor="let cloud of clouds" [value]="cloud.id">{{ cloud.name }}</option>
 </select>
 
 <div class="platformChose">{{ currentPlatform }}</div>
